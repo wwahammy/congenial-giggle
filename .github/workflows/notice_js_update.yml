@@ -1,0 +1,16 @@
+# License: LGPL-3.0-or-later
+name: NOTICE-js update
+env:
+  node: 14.6.0
+  os: ubuntu-20.04
+on: 
+  workflow_run:
+    workflows: ["NOTICE-ruby verification"]
+jobs:
+  notice_js:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: download branch
+        uses: actions/download-artifact@v2
+        with:
+          name: branch_to_update
