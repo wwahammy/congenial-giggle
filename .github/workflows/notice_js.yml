@@ -19,14 +19,12 @@ jobs:
         with:
           node-version: ${{ env.node }}
           cache: 'npm'
-      - run: npm install
       - name: Verify NOTICE-js
         run: npm run notice:js
       - name: output the branch
         if: ${{ failure() && github.actor == 'dependabot[bot]' }}
         run: | 
           echo ${{ github.ref }} > branch.txt
-
       - name: output github_context
         if: ${{ failure() && github.actor == 'dependabot[bot]' }}
         run: | 
