@@ -11,7 +11,9 @@
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test",
+    "notice:js": "npx @houdiniproject/noticeme@^1.1.0-pre1 -f NOTICE-js -s 250",
+    "notice:js:update": "npx @houdiniproject/noticeme@^1.1.0-pre1 -f NOTICE-js -s 250 -u"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,6 @@
     "js-yaml": "^4.1.0",
     "prettier": "2.2.1",
     "ts-jest": "^27.0.3",
-    "typescript": "^4.1.3"
+    "typescript": "^4.4.3"
   }
 }
