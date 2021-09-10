@@ -45,5 +45,5 @@ jobs:
           git config user.email github-actions@github.com
           git add NOTICE-js
           git commit -m "Update NOTICE-js"
-          git push
+          git push HEAD:${{ steps.branch.outputs.content }}
       
