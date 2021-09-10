@@ -19,3 +19,8 @@ jobs:
           workflow: notice_js.yml
           name: branch_to_update
           workflow_conclusion: 'failure'
+
+      - name: output the dang context
+        run: |
+          echo {{ toJSON(github) }}
+          
