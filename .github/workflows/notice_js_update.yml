@@ -6,7 +6,6 @@ env:
 on: 
   workflow_run:
     workflows: ["NOTICE-js verification"]
-    branches: ["dependabot/*"]
     types:
       - completed
 
