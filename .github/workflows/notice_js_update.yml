@@ -5,7 +5,7 @@ env:
   os: ubuntu-20.04
 on: 
   workflow_run:
-    workflows: ["NOTICE-ruby verification"]
+    workflows: ["NOTICE-js verification"]
 jobs:
   notice_js:
     runs-on: ubuntu-20.04
