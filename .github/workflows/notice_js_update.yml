@@ -22,5 +22,4 @@ jobs:
 
       - name: output the dang context
         run: |
-          echo {{ toJSON(github) }}
-          
+          echo ${{ toJSON(github) }}
