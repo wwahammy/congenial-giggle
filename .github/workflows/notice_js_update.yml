@@ -18,5 +18,4 @@ jobs:
         with:
           workflow: notice_js.yml
           name: branch_to_update
-          path: branch.txt
           workflow_conclusion: 'failure'
