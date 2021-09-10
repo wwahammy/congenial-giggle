@@ -6,6 +6,10 @@ env:
 on: 
   workflow_run:
     workflows: ["NOTICE-js verification"]
+    branches: ["dependabot/*"]
+    types:
+      - completed
+
 jobs:
   notice_js:
     runs-on: ubuntu-20.04
@@ -16,3 +20,4 @@ jobs:
           workflow: notice_js.yml
           name: branch_to_update
           path: branch.txt
+          workflow_conclusion: 'failure'
