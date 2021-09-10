@@ -17,9 +17,15 @@ jobs:
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: notice_js.yml
+          branch: ${{ github.head_branch }}
           name: branch_to_update
           workflow_conclusion: 'failure'
-
-      - name: output the dang context
-        run: |
-          echo ${{ toJSON(github) }}
+      - name: Read branch.txt
+        id: branch
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./branch.txt
+      - name: checkout code
+        uses: actions/checkout@v2
+        with: 
+          ref: ${{ steps.branch.outputs.content }}
